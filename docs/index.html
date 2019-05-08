@@ -1,0 +1,839 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:#954F72;
+	text-decoration:underline;}
+span.font-weight-bold
+	{mso-style-name:font-weight-bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink="#954F72">
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;line-height:107%;color:black'>Mapping <i>Sentiment
+Analysis</i> results onto a 5-star rating in a review and generating Tag Cloud
+from <i>Content Classification</i>.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Video
+link:&nbsp;</span><a href="https://youtu.be/2tZe1zAXpoA" target="_blank"><span
+style='font-size:12.0pt;line-height:107%'>https://youtu.be/2tZe1zAXpoA</span></a></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Git
+Repository:&nbsp;</span><a
+href="https://github.com/Ashot72/Sentiment-Analysis-and-Content-Classification"
+target="_blank"><span style='font-size:12.0pt;line-height:107%'>https://github.com/Ashot72/Sentiment-Analysis-and-Content-Classification</span></a></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>Natural Language </span></i><span style='font-size:12.0pt;
+line-height:107%;color:black'>uses machine learning to reveal the structure and
+meaning of text. You can extract information about people, places, and events, and
+better understand social media </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>sentiment
+and customer conversations. <i>Natural Language </i>enables you to analyze text
+and also integrate it with your document storage on Google Cloud Storage.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>The
+powerful pre-trained models of the <i>Natural Language API</i> let developers
+work with natural understanding features including <i>sentiment analysis</i>, <i>entity
+analysis</i>, <i>entity sentiment </i></span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>analysis</span></i><span style='font-size:12.0pt;line-height:107%;
+color:black'>, <i>content classification </i>and <i>syntax analysis</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Sentiment analysis </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>inspects the given text and identifies the
+prevailing emotional option within the text, especially to determine a writer</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s attitude as positive, negative, or natural. </span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Entity analysis </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>inspects the given text for known entities
+(Proper nouns such as public figures, landmarks, and so on. Common nouns such
+as restaurant, stadium, and so on.) and </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>returns
+information about those entities.</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Entity sentiment analysis </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>inspects the give text for known entities (proper
+nouns and common nouns), returns information about those entities, and
+identifies the prevailing emotional </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>option
+of the entity within the text, especially to determine a writer</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s attitude toward the entity as positive, negative, or natural. </span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Syntactic analysis</span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'> extracts linguistic information, breaking up the
+given text into a series of sentences and tokens (generally, word boundaries), providing
+further analysis on those tokens.</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Content classification </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>analysis text content and returns a content
+category for the content. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>There
+is <i>annotateText </i>convenience method that provides all the features such
+as <i>analyzeSentiment</i>, <i>analzeEntities</i> etc. in one call.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Our
+app</span><span style='color:black'>'</span><span style='font-size:12.0pt;
+line-height:107%;color:black'>s cloud function makes use of <i>annotateText </i>method
+to provide all features. This basically means that instead of writing a code
+for each feature we just can write a single code </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>targeting
+all features and we did exactly that.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Before
+writing a cloud function we have to do create a Google Cloud project, enable both
+<i>Cloud Natural Language API</i> and <i>Google Cloud Functions API</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1129 height=490 id="Picture 2"
+src="index_files/image001.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+1</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>You
+should go to </span><a href="https://console.cloud.google.com/" target="_blank">https://console.cloud.google.com</a>
+and create a new project. I already created a project called <i>gcloud</i>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=1143 height=516 id="Picture 3"
+src="index_files/image002.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+2</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>The
+next step is to enable APIs. Select <i>APIs &amp; Services</i> then <i>Library</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1112 height=481 id="Picture 5"
+src="index_files/image003.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+3</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Search
+<i>Natural </i>and enable <i>Cloud Natural Language API</i>. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1117 height=564 id="Picture 6"
+src="index_files/image004.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+4</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>You
+will see <i>ENABLE IT </i>blue button instead of <i>MANAGE.</i> I already
+enabled it.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1144 height=533 id="Picture 7"
+src="index_files/image005.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+5</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>I
+clicked <i>MANAGE </i>and accessed Cloud Natural Language API page.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1151 height=503 id="Picture 8"
+src="index_files/image006.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+6</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Similarly,
+we enable <i>Cloud Functions API</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1161 height=590 id="Picture 9"
+src="index_files/image007.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+7</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Enable
+<i>Cloud Function API</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1165 height=564 id="Picture 10"
+src="index_files/image008.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+8</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Cloud
+Function API is enabled.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1200 height=660 id="Picture 11"
+src="index_files/image009.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+9</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>It
+is time to create a Cloud Function. Select <i>Cloud Function </i>option.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1206 height=541 id="Picture 12"
+src="index_files/image010.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+10</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>I
+already created a cloud function called <i>analysis</i>. There is <i>CREATE
+FUNCTION </i>button to create a new one. Click it.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1204 height=824 id="Picture 13"
+src="index_files/image011.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+11</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Here
+is the page you create a cloud function by specifying a function name.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1223 height=757 id="Picture 14"
+src="index_files/image012.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+12</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>We
+installed both <i>@google-cloud/language and cors </i>packaged which are
+required for our app. Our cloud function requires two parameters; first one is <i>content
+</i>which is the content to be analyzed</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>and
+the second one is <i>features</i> we already discussed. You can specify one or
+more features to analyze (will be discussed). You will get an exception if no
+feature is passed.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1234 height=267 id="Picture 16"
+src="index_files/image013.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+13</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Here
+is <i>package.json </i>with two packages installed.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1279 height=687 id="Picture 53"
+src="index_files/image014.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>You
+will find https REST endpoint by clicking <i>Equivalent REST </i>link. This is
+the URL we specified in our project</span><span style='color:black'>'</span><span
+style='font-size:12.0pt;line-height:107%;color:black'>s url.js file to call the
+cloud function.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1203 height=647 id="Picture 17"
+src="index_files/image015.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+14</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Let</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s add a comment. You will see both 5-star rating and tag cloud appearing
+on the page once you add a comment. 5-star analysis I generated via <i>Semantic
+Analysis </i>(extractDocumentSentiment).</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>documentSentiment </span></i><span style='font-size:12.0pt;
+line-height:107%;color:black'>(will be discussed) contains the overall
+sentiment of the document, which consists of the following fields:</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>score </span></i><span style='font-size:12.0pt;line-height:107%;
+color:black'>of the sentiment ranges between <i>-1.0</i> (negative) and <i>1.0</i>
+(positive) and corresponds to the overall emotional leaning of the text.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>magnitude </span></i><span style='font-size:12.0pt;line-height:
+107%;color:black'>indicates the overall strength of emotion (both positive and
+negative) within the given text, between <i>0.0</i> and <i>+inf</i>. Unlike <i>score</i>,
+<i>magnitude </i>is not normalized; each expression</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>of
+emotion within the text (both positive and negative) contributes to the text</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s magnitude (so longer text blocks may have greater magnitudes). <i>A
+higher value of magnitude indicates </i></span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>that the strength of the sentiment</span></i><span
+style='font-size:12.0pt;line-height:107%;color:black'>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Sentiment
+is <i>Clearly Positive</i> for score <i>score</i>:0.8, <i>magnitude</i>:3.0</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Sentiment
+is C<i>learly Negative </i>for <i>score</i>:-0.6, <i>magnitude</i>:4.0</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Sentiment
+is <i>Natural</i> for <i>score</i>:0.1, <i>magnitude</i>:0.0</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Sentiment
+is <i>Mixed</i> for <i>score</i>:0.0, <i>magnitude</i>:4.0</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Let</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s test it using <i>Postman </i>which is a powerful HTTP client for
+testing <i>web services</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1205 height=662 id="Picture 18"
+src="index_files/image016.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+15</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>We
+are calling the cloud function by specifying <i>content</i> with <i>extractDocumentSentiment
+</i>feature<i> </i>and getting a valid response.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1208 height=598 id="Picture 20"
+src="index_files/image017.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+16</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>documentSentiment </span></i><span style='font-size:12.0pt;
+line-height:107%;color:black'>node contains overall document sentiment score
+and magnitude. Document overall sentiment score is used for 5-star rating.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>sentences</span></i><span style='font-size:12.0pt;line-height:
+107%;color:black'> contain a list of the sentences extracted from the original
+document which contains:</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>sentiment; </span></i><span style='font-size:12.0pt;line-height:
+107%;color:black'>contains the sentence level sentiment values attached to each
+sentence, which contain <i>score </i>and <i>magnitude </i>values as described
+above.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1225 height=551 id="Picture 21"
+src="index_files/image018.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+17</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>The
+<i>score</i> for the sentence <i>Very nice place to meet with friends and
+family especially after work </i>is 0.899 and <i>magnitude </i>has the same value,
+I do not know why there are always the same.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1236 height=602 id="Picture 22"
+src="index_files/image019.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+18</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>We
+already stated that <i>score </i>can not have a negative value and I tried with
+a content of a negative score. You can see that again <i>score</i> and <i>magnitude
+</i>have the same value but the value </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>of
+magnitude is <i>positive</i> while <i>score</i></span><span style='color:black'>'</span><i><span
+style='font-size:12.0pt;line-height:107%;color:black'>s</span></i><span
+style='font-size:12.0pt;line-height:107%;color:black'> is negative. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Instead
+of talking about score</span><span style='color:black'>'</span><span
+style='font-size:12.0pt;line-height:107%;color:black'>s <i>positive</i>, <i>neutral</i>
+and <i>negative</i> options we could consider the following categories <i>Very
+positive</i>, <i>Positive, Neutral</i>, <i>Negative</i>, <i>Very negative</i>
+and map </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>onto
+a 5-star rating in a review, e.g.: <i>Very Positive = 5</i> stars and <i>Very
+negative = 0.5 stars</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1249 height=631 id="Picture 23"
+src="index_files/image020.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+19</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Here
+is <i>mapRating</i> function that maps scores to ratings.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1250 height=598 id="Picture 24"
+src="index_files/image021.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+20</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>You
+may notice that <i>tokens</i>, <i>entities</i> and <i>categories</i> branches
+are empty. They are empty because they refer to <i>Entity</i>, <i>Syntactic</i>
+analysis and <i>Content</i> <i>Classification</i> that we will discuss soon.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1266 height=765 id="Picture 25"
+src="index_files/image022.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+21</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Our
+app generates tag cloud from content classification. For the specified comment
+there are two categories <i>/Food &amp; Drink/Restaurants </i>and<i> /Food
+&amp; Drink/Cooking &amp; Recopies</i>. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Note,
+that if <i>/Food &amp; Drink and</i> <i>/Food &amp; Drink/Restaurants </i>both
+apply to a document, then only the <i>/Food &amp; Drink/Restaurants </i>category
+is returned, as it is the more specific result.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>Content classification</span></i><span style='font-size:12.0pt;
+line-height:107%;color:black'> is the process of assigning tags of categories
+to text according to its content. It is one of the fundamental tasks in <i>Natural
+Language Processing (NLP)</i></span><span style='line-height:107%;color:black'>.
+Unstructured data </span></p>
+
+<p class=MsoNormal><span style='line-height:107%;color:black'>in the form of
+text is everywhere: emails, chats, web pages, social media, support tickets, Survey
+responses and more. Text can be an extremely rich source of information, but
+extracting insights from it can </span></p>
+
+<p class=MsoNormal><span style='line-height:107%;color:black'>be very hard and
+time-consuming due to the unstructured nature. So, <i>content classification</i>
+(<i>text categorization</i> or <i>text tagging</i>) is the task of assigning a
+set of predefined categories to free-text.</span></p>
+
+<p class=MsoNormal><span style='line-height:107%;color:black'>Text
+classification can be used in a broad range of context such as classifying
+short texts (e.g. tweets, headlines) or organizing much larger documents (e.g.
+customer reviews, media articles or legal contracts).</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1275 height=628 id="Picture 26"
+src="index_files/image023.jpg"></p>
+
+<p class=MsoNormal>Figure 22</p>
+
+<p class=MsoNormal><a
+href="https://cloud.google.com/natural-language/docs/categories" target="_blank">https://cloud.google.com/natural-language/docs/categories</a>
+<span style='font-size:12.0pt;line-height:107%;color:black'>This is the
+complete list of content categories for the <i>classifyText </i>method.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1256 height=598 id="Picture 51"
+src="index_files/image024.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+23</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>I
+highlighted the categories found for the comment we added (Figure 21).</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1312 height=589 id="Picture 28"
+src="index_files/image025.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+24</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Testing
+the same comment in Postman. We see not only the <i>category</i> <i>name</i>
+but also <i>confidence</i> which is the classifier</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s confidence of the category. Number represents how certain the
+classifier </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>is
+that this category represents the given text.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1282 height=763 id="Picture 29"
+src="index_files/image026.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+25</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Both
+a <i>5-star rating </i>and <i>tag cloud</i> are rendered when we add a comment.
+This is because we pass two features <i>extractSentimentDocument</i> and
+classifyText.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1272 height=523 id="Picture 30"
+src="index_files/image027.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+26</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Setting
+<i>true</i> both for <i>extractSentimentDocument </i>and <i>classifyText</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1275 height=442 id="Picture 31"
+src="index_files/image028.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+27</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>This
+time the response includes <i>sentences</i>, <i>categories</i> and <i>documentSentiment</i>
+nodes as <i>extractSentimentDocument </i>and <i>classifyText</i> are specified
+in the request.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Setting
+any feature with <i>classifyText </i>may not work in certain circumstances. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1259 height=586 id="Picture 33"
+src="index_files/image029.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+29</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>A
+customer commented <i>Customer service is really good at this restaurant</i>.
+and an exception occurred.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1257 height=671 id="Picture 34"
+src="index_files/image030.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+30</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>The
+reason is that content to be classified must have at least 20 tokens (words) in
+order for the Natural Language API to return a response.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>Sentiment Analysis </span></i><span style='font-size:12.0pt;
+line-height:107%;color:black'>(<i>extractDocumentSentiment</i>) works with less
+characters but as we call <i>extractDocumentSentiment </i>with <i>classifyText</i>
+then</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>we
+get an error when a comment contains less than 20 tokens. To avoid it we should
+call <i>extractDocumentSentiment </i>and<i> classifyText</i></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>separately.
+It is time to test it in Postman.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1276 height=477 id="Picture 36"
+src="index_files/image031.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+31</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Testing
+<i>Customer service is really good at this restaurant</i> in Postman with two
+features. The same error.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1284 height=601 id="Picture 37"
+src="index_files/image032.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+32</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Specifying
+only<i> extractDocumentSentiment </i>feature. We got a valid response as <i>classifyText
+</i>was not specified.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1251 height=438 id="Picture 39"
+src="index_files/image033.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+33</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Specifying
+<i>classifyText </i>and the same error. You should be careful and do not call
+the cloud function with <i>classifyText</i> feature if content to be classified
+have less than 20 tokens (words).</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1256 height=446 id="Picture 40"
+src="index_files/image034.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+34</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>We
+also stated that the cloud function call should include at least one feature to
+avoid an exception. Here we call the function without a feature and getting an
+exception.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1270 height=414 id="Picture 42"
+src="index_files/image035.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+35</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Calling
+the cloud function without a content makes no sense.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1274 height=613 id="Picture 44"
+src="index_files/image036.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+35</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Cloud
+Function implementation (Figure 12) can be found under <i>cloud</i> folder in
+GitHub repository.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1288 height=494 id="Picture 45"
+src="index_files/image037.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+36</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Let</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s test features that are not used in the app but the cloud
+function can handle it such as <i>extractEntitySentiment</i>.</span></p>
+
+<p class=MsoNormal><i><span style='font-size:12.0pt;line-height:107%;
+color:black'>&nbsp;</span></i></p>
+
+<p class=MsoNormal><img border=0 width=1256 height=727 id="Picture 46"
+src="index_files/image038.png"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+37</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>As
+we already specified:</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Entity sentiment analysis </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>inspects the give text for known entities (proper
+nouns and common nouns), returns information about those entities, and
+identifies the prevailing emotional option </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>of
+the entity within the text, especially to determine a writer</span><span
+style='color:black'>'</span><span style='font-size:12.0pt;line-height:107%;
+color:black'>s attitude toward the entity as positive, negative, or natural. </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>You
+can see <i>Yerevan </i>with <i>LOCATION</i> type, or <i>Sandwich</i> having
+COMMON type with its <i>score</i> and <i>­magnitude</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1262 height=418 id="Picture 47"
+src="index_files/image039.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+38</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Testing
+with <i>extractEntities</i> feature.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1267 height=732 id="Picture 48"
+src="index_files/image040.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+39</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Entity analysis </span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'>inspects the given text for known entities
+(Proper nouns such as public figures, landmarks, and so on. Common nouns such
+as </span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>restaurant,
+stadium, and so on.) and returns information about those entities.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Here
+are <i>Entity analysis </i>results. Note, <i>sentiment</i> is always <i>null </i>as
+<i>Entity analysis</i> does not include <i>sentiment analysis</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1305 height=465 id="Picture 49"
+src="index_files/image041.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+40</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>The
+last one is <i>extractSyntax</i>.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=1278 height=701 id="Picture 50"
+src="index_files/image042.jpg"></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Figure
+41</span></p>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;line-height:107%;
+color:black'>Syntactic analysis</span></b><span style='font-size:12.0pt;
+line-height:107%;color:black'> extracts linguistic information, breaking up the
+given text into a series of sentences and tokens (generally, word boundaries), providing
+further analysis on those tokens.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>Only
+<i>sentences</i> and <i>tokens</i> nodes with values are returned for this
+feature.</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:107%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span class=MsoHyperlink><span style='text-decoration:none'>&nbsp;</span></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
